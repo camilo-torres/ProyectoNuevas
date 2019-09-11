@@ -1,0 +1,15 @@
+<center>
+<%= form_tag gamer_sessions_path, method: :post do %>
+     <div class="field">
+     <%= label_tag :nickname %><br/>
+     <%= text_field_tag :nickname %>
+	</div>
+     <div class="field">
+     <%= label_tag :password %><br/>
+     <%= text_field_tag :password %>
+	</div>
+	<div class="actions">
+	<%= submit_tag %>
+	</div>
+<% end %>
+<center>
