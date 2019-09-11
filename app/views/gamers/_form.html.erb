@@ -1,0 +1,39 @@
+<center>
+<%= form_with(model: gamer, local: true) do |form| %>
+  <% if gamer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>
+
+      <ul>
+        <% gamer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nickname %>
+    <%= form.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</center>

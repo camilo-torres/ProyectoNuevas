@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+      html{
+	margin:0px;
+        position:relative;
+		text-align:center;
+
+            }
+
+        header.headie {
+	margin:0px;
+        padding-top: 25px;
+             }
+
+</style>
+
+  <head>
+    <title>Proyecto</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<header class="headie" style="background-color:pink;">
+	<center>
+	<nav>
+	<table>
+	<tr>
+		<td>
+		<a href="#primero">Main</a>
+		</td>
+		<td>
+		<a href="http://localhost:3000/gamers">Sign in</a>
+		</td>
+		<td>
+		<a href="http://localhost:3000/gamers/new">Sign up</a>
+		</td>
+		<td>
+		<a href="#primero">Sign out</a>
+		</td>
+	</tr>
+	</table>
+	<center>
+</header>
+
+  <body style="background-color:powderblue;" >
+    <%= yield %>
+  </body>
+</html>

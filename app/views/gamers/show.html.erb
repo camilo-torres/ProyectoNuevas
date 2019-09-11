@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @gamer.nickname %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @gamer.password %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @gamer.email %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @gamer.country %>
+</p>
+
+<%= link_to 'Edit', edit_gamer_path(@gamer) %> |
+<%= link_to 'Back', gamers_path %>
