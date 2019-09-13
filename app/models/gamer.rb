@@ -1,4 +1,5 @@
 class Gamer < ApplicationRecord
+has_secure_password
 has_many :purchases
 has_many :games, through: :purchases
 validates :nickname, presence: true

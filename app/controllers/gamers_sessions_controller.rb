@@ -1,19 +1,19 @@
 class GamersSessionsController < ApplicationController
 
-	def new
-		@gamer = Gamer.new
-	end
-	def create 
-		if @gamer = login(params[:nickname],params[:password])
-			redirect_back_or_to(posts_path, message: "Login exitoso")
-			else 
-				flash.now[:alert] = "El usuario o la contrasena estan incorrectas"
-				render action: :new
-		end
-	end
-	def destroy
-		logout
-		redirect_to(:nickname, message: "Logged out")
-
-end
+ def new
+  end
+  def create
+    gamer = Gamer.find_by_nickname(params[:nickname])
+    if gamer && gamer.authenticate(params[:password])
+      session[:gamer_id] = gamer.id
+      redirect_to root_url, notice: "Logged in!"
+    else
+      flash.now[:alert] = "Email or password is invalid"
+      render "new"
+    end
+  end
+  def destroy
+    session[:gamer_id] = nil
+    redirect_to root_url, notice: "Logged out!"
+  end
 end
